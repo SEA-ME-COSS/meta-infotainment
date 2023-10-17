@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest>
+  <remote name="yocto" fetch="git://git.yoctoproject.org/" />
+  <remote name="openembedded" fetch="git://git.openembedded.org/" />
+  <remote name="github" fetch="https://github.com/" />
+  
+  <default remote="yocto" revision="kirkstone" />
+
+  <project name="poky" path="poky" />
+  <project name="meta-raspberrypi" path="poky/meta-raspberrypi" />
+  <project name="meta-openembedded" path="poky/meta-openembedded" remote="openembedded" />
+  <project name="meta-qt5/meta-qt5" path="poky/meta-qt5" remote="github" />
+  <project name="SEA-ME-COSS/meta-infotainment" path="poky/meta-infotainment" remote="github" />
+
+</manifest>
+

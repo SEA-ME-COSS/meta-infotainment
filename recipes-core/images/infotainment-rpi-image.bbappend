@@ -1,3 +1,8 @@
+HU_CODE = " \
+    headunit \
+    auto-start \
+"
+
 IMAGE_BASE = " \
     python3 \
     python3-numpy \
@@ -24,11 +29,6 @@ VSOMEIP_PKGS = " \
     vsomeip-dev \
     common-api-c++-someip \
     common-api-c++-someip-dev \
-"
-
-HU_CODE = " \
-    headunit \
-    auto-start \
 "
 
 QT_BASE = " \

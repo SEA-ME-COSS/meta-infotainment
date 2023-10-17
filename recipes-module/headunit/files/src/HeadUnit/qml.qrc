@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>font/Nebula-Regular.otf</file>
+        <file>image/logo.png</file>
+        <file>image/wolfsberg.png</file>
+        <file>image/seame.png</file>
+        <file>image/turn-icon.png</file>
+        <file>image/warning-icon.png</file>
+        <file>image/gps.png</file>
+        <file>image/album.jpg</file>
+        <file>image/play.png</file>
+        <file>image/pause.png</file>
+        <file>image/off.png</file>
+        <file>media/music.mp3</file>
+        <file>media/movie.mp4</file>
+        <file>qml/ValueSource.qml</file>
+    </qresource>
+</RCC>

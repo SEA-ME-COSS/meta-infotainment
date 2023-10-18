@@ -8,7 +8,7 @@
   <default remote="yocto" revision="kirkstone" />
 
   <project name="poky" path="poky" />
-  <project name="meta-raspberrypi" path="poky/meta-raspberrypi" />
+  <project name="meta-raspberrypi" path="poky/meta-raspberrypi" revision="482d864b8f1af84915ed6a9641e80af4e49a1f63" />
   <project name="meta-openembedded" path="poky/meta-openembedded" remote="openembedded" />
   <project name="meta-qt5/meta-qt5" path="poky/meta-qt5" remote="github" />
   <project name="SEA-ME-COSS/meta-infotainment" path="poky/meta-infotainment" remote="github" />

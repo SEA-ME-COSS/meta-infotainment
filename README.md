@@ -4,7 +4,7 @@
 This is the layer for head-unit fit in OpenEmbedded/Yocto.
 
 Details of Head-Unit, go to [DES-Head-Unit](https://github.com/SEA-ME-COSS/DES-Head-Unit)
-  
+<br/>  
 
 # Dependencies
 

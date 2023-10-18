@@ -96,5 +96,8 @@ IMAGE_INSTALL += " \
     ${PIRACER_PKGS} \
     ${HU_CODE} \
     ${EX_CODE} \
+    ${QT_PKGS} \
+    ${QT_BASE} \
+    ${VSOMEIP_PKGS} \
 "
 

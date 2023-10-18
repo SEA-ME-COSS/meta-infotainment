@@ -3,7 +3,7 @@ LICENSE = "CLOSED"
 
 SRC_URI += "file://can-example.cpp"
 
-S = "${WORKDIR}/can-example"
+S = "${WORKDIR}"
 
 do_compile() {
     ${CXX} ${LDFLAGS} can-example.cpp -o can-example

@@ -6,7 +6,7 @@ SRC_URI += " \
         file://cpp_example.cpp \
 "
 
-S = "${WORKDIR}/helloworld"
+S = "${WORKDIR}"
 
 do_compile() {
     ${CC} ${LDFLAGS} c_example.c -o c_example
@@ -19,8 +19,8 @@ do_install() {
     install -m 0755 c_example ${D}${bindir}/example/helloworld
     install -m 0755 c_example.c ${D}${bindir}/example/helloworld
 
-    install -m 0755 cpp_example ${D}${binddir}/example/helloworld
-    install -m 0755 cpp_example.c ${D}${binddir}/example/helloworld
+    install -m 0755 cpp_example ${D}${bindir}/example/helloworld
+    install -m 0755 cpp_example.cpp ${D}${bindir}/example/helloworld
 }
 
 FILES:${PN} += "${bindir}/example/helloworld"

@@ -1,3 +1,10 @@
+SKIP_AUTO_START ??= "0"
+
+python () {
+    if d.getVar('SKIP_AUTO_START') == '1':
+        bb.utils.remove_from_list(d, 'IMAGE_INSTALL', 'auto-start')
+}
+
 HU_CODE = " \
     headunit \
     auto-start \
@@ -86,10 +93,8 @@ PIRACER_PKGS = " \
 
 IMAGE_INSTALL += " \
     ${IMAGE_BASE} \
-    ${QT_BASE} \
-    ${QT_PKGS} \
     ${PIRACER_PKGS} \
     ${HU_CODE} \
-    ${VSOMEIP_PKGS} \
+    ${EX_CODE} \
 "
 

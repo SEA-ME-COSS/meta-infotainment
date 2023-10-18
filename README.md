@@ -1,14 +1,13 @@
 # meta-infotainment
 
----
 
 This is the layer for head-unit fit in OpenEmbedded/Yocto.
 
 Details of Head-Unit, go to [DES-Head-Unit](https://github.com/SEA-ME-COSS/DES-Head-Unit)
+  
 
 # Dependencies
 
----
 
 This layher depends on:
 
@@ -27,10 +26,10 @@ This layher depends on:
 - URI: [https://github.com/meta-qt5/meta-qt5](https://github.com/meta-qt5/meta-qt5.git)
     - branch : kirkstone
     - commit : ae8a97f79364bed1abc297636f7933d0e35f22be
+  
 
 # Quick Start
 
----
 
 Install basic environment for yocto.
 
@@ -86,10 +85,10 @@ If you want to disable auto-start
 bitbake infotainment-rpi-image -c clean
 bitbake infotainment-rpi-image -e SKIP_AUTO_START=1
 ```
+  
 
 # Build Images
 
----
 
 This headunit works fully on Raspberry Pi 4 with full hardware setup.
 
@@ -102,10 +101,10 @@ If you want to test in 64-bit machine in QEMU using the following command:
 ```bash
 MACHINE=qemux86-64 runqemu nographic
 ```
+  
 
 # Download Image
 
----
 
 1. Find where SD card is
     
@@ -122,17 +121,16 @@ MACHINE=qemux86-64 runqemu nographic
     sudo dd if=infotainment-rpi-image-raspberrypi4-64-[timewhenyoubuild].rootfs.rpi-sdimg of=/dev/sda
     sync
     ```
-    
+  
 
 # Details
 
----
 
 If you want to know details about yocto, go to docs
+  
 
 # References
 
----
 
 - [Yocto Project](https://docs.yoctoproject.org/4.0.12/migration-guides/migration-4.0.html)
 - [Meta-raspberrypi](https://meta-raspberrypi.readthedocs.io/en/latest/index.html)

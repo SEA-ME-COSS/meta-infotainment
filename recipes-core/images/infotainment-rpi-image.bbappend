@@ -1,13 +1,7 @@
-SKIP_AUTO_START ??= "0"
-
-python () {
-    if d.getVar('SKIP_AUTO_START') == '1':
-        bb.utils.remove_from_list(d, 'IMAGE_INSTALL', 'auto-start')
-}
-
 HU_CODE = " \
     headunit \
     auto-start \
+    pulseaudio \
 "
 
 IMAGE_BASE = " \
@@ -70,6 +64,13 @@ QT_PKGS = " \
     qtmultimedia \
 "
 
+GSTREAMER_PKGS = " \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-libav \
+"
+
 PIRACER_PKGS = " \
     python3-adafruit-blinka \
     python3-adafruit-circuitpython-busdevice \
@@ -99,5 +100,6 @@ IMAGE_INSTALL += " \
     ${QT_PKGS} \
     ${QT_BASE} \
     ${VSOMEIP_PKGS} \
+    ${GSTREAMER_PKGS} \
 "
 

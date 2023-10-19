@@ -56,6 +56,11 @@ DISTRO_FEATURES:append = " X11"
 # Ignore old license error
 LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
 
+# Set for qt5 gstreamer
+LICENSE_FLAGS_ACCEPTED = "commercial"
+PACKAGECONFIG:append_pn-qtmultimedia=" gstreamer1.0"
+PACKAGECONFIG:append_pn-gstreamer1.0-plugins-bad = " hls"
+
 # For raspberrypi4
 MACHINE = "raspberrypi4-64"
 

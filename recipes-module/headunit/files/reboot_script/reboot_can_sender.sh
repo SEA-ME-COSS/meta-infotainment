@@ -12,6 +12,6 @@ ip link set can0 up type can bitrate 500000
 
 ifconfig can0 txqueuelen 65536
 
-cd ../build
+cd ../execute_files
 ./"$process_name" &
 

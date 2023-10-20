@@ -59,7 +59,7 @@ void read_port()
 
     while(read_can_port)  // Continue reading as long as the flag is set
     {
-        usleep(100000);  // Sleep for 100ms
+        // usleep(100000);  // Sleep for 100ms
 
         struct timeval timeout = {1, 0};  // Set the timeout for the select function to 1 second
         fd_set readSet;  // File descriptor set for the select function

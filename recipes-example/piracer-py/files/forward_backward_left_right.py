@@ -1,4 +1,3 @@
-# Copyright (C) 2022 twyleg
 import time
 from piracer.vehicles import PiRacerStandard, PiRacerPro
 

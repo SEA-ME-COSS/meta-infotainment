@@ -9,7 +9,7 @@ include_directories(
 )
 link_directories(
     ${CMAKE_LIBRARY_PATH}
-    )
+)
 add_executable(SpeedClient
         src/SpeedClient.cpp
         src-gen-manager/v1/commonapi/ManagerSomeIPProxy.cpp

@@ -25,13 +25,17 @@ bitbake-layers add-layer ../meta-infotainment
 # Update local.conf with given settings
 echo "Updating local.conf..."
 cat <<EOF >> $LOCAL_CONF
+# Setting for CAN 2-CH FD
+KERNEL_DEVICETREE:append = " \
+                        overlays/cmp251xfd.dtbo \
+"
+
 # Setting for i2c
 ENABLE_I2C = "1"
 KERNEL_MODULE_AUTOLOAD:rpi += "i2c-dev i2c-bcm2708"
 
 # Add dtbo files for waveshare 7.9inch LCD
 KERNEL_DEVICETREE:append = " \
-                        overlays/mcp251xfd.dtbo \
                         overlays/vc4-kms-dsi-waveshare-panel.dtbo \
 "
 

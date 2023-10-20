@@ -1,7 +1,6 @@
 HU_CODE = " \
     headunit \
     auto-start \
-    pulseaudio \
 "
 
 IMAGE_BASE = " \
@@ -69,6 +68,7 @@ GSTREAMER_PKGS = " \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-libav \
+    pulseaudio \
 "
 
 PIRACER_PKGS = " \

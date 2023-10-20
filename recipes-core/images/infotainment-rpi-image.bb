@@ -32,5 +32,5 @@ local_autologin () {
     sed -i -e 's/^\(ExecStart *=.*getty \)/\1--autologin root /' ${KIRKSTONE_LOCAL_GETTY}
 }
  
-ROOTFS_POSTPROCESS_COMMAND += "local_autologin; "
+ROOTFS_POSTPROCESS_COMMAND += "local_autologin;"
 

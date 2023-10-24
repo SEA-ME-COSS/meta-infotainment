@@ -27,7 +27,7 @@ echo "Updating local.conf..."
 cat <<EOF >> $LOCAL_CONF
 # Setting for CAN 2-CH FD
 KERNEL_DEVICETREE:append = " \
-                        overlays/cmp251xfd.dtbo \
+                        overlays/mcp251xfd.dtbo \
 "
 
 # Setting for i2c
@@ -41,7 +41,6 @@ KERNEL_DEVICETREE:append = " \
 
 # Install dtbo for waveshare 7.9inch LCD
 RPI_EXTRA_CONFIG += " \n\
-dtoverlay=vc4-fkms-v4d-pi4 \n\
 dtoverlay=vc4-kms-dsi-waveshare-panel,7_9_inch \n\
 "
  

@@ -4,7 +4,7 @@ LICENSE = "CC-BY-SA-4.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=fba3b94d88bfb9b81369b869a1e9a20f"
 
 SRC_URI = "git://github.com/SEA-ME-COSS/DES-Head-Unit.git;protocol=https;branch=kirkstone"
-SRCREV = "af5c09b59bae7d340601519eb346806d6a686a4d"
+SRCREV = "1f99d970aca43da3a02511a21ab87f14f157a0ff"
 
 S = "${WORKDIR}/git"
 
@@ -26,5 +26,5 @@ EXTRA_OECMAKE += " \
 "
 
 do_install:append() {
-    cp -r ${S}/reboot_script ${D}${bindir}/headunit
+    cp -r ${S}/can-setup.sh ${D}${bindir}/headunit
 }

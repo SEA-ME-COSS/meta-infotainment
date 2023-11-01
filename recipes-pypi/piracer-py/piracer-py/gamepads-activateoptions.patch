@@ -1,0 +1,31 @@
+--- a/piracer/gamepads.py	2023-10-30 13:55:26.200408000 +0100
++++ b/piracer/gamepads.py	2023-10-30 14:01:05.866302845 +0100
+@@ -16,17 +16,17 @@
+     def __init__(self) -> None:
+         self.analog_stick_left = Vector3f()
+         self.analog_stick_right = Vector3f()
+-        self.button_l1: Optional[float]
+-        self.button_l2: Optional[float]
+-        self.button_r1: Optional[float]
+-        self.button_r2: Optional[float]
+-        self.button_x: Optional[bool]
+-        self.button_a: Optional[bool]
+-        self.button_b: Optional[bool]
+-        self.button_y: Optional[bool]
+-        self.button_select: Optional[bool]
+-        self.button_start: Optional[bool]
+-        self.button_home: Optional[bool]
++        self.button_l1 = False
++        self.button_l2 = False
++        self.button_r1 = False
++        self.button_r2 = False
++        self.button_x = False
++        self.button_a = False
++        self.button_b = False
++        self.button_y = False
++        self.button_select = False
++        self.button_start = False
++        self.button_home = False
+ 
+ 
+ class Joystick(object):

@@ -1,25 +1,19 @@
 HU_CODE = " \
     headunit \
-    auto-start \
+    supervisor \
+    python3-supervisor \
 "
 
 IMAGE_BASE = " \
     python3 \
     python3-numpy \
     bash \
-    openssh \
     wpa-supplicant \
+    openssh \
     git \
     can-utils \
     libsocketcan \
     bcm2835-dev \
-"
-
-EX_CODE = " \
-    can-example \
-    helloworld-example \
-    qt5-simple-example \
-    vsomeip-example \
 "
 
 VSOMEIP_PKGS = " \
@@ -90,13 +84,13 @@ PIRACER_PKGS = " \
     python3-adafruit-circuitpython-requests \
     python3-pyftdi \
     python3-piracer-py \
-"
+    opencv \    
+    "
 
 IMAGE_INSTALL += " \
     ${IMAGE_BASE} \
     ${PIRACER_PKGS} \
     ${HU_CODE} \
-    ${EX_CODE} \
     ${QT_PKGS} \
     ${QT_BASE} \
     ${VSOMEIP_PKGS} \

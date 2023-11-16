@@ -1,7 +1,7 @@
 HU_CODE = " \
     headunit \
+    pdc \
     supervisor \
-    python3-supervisor \
 "
 
 IMAGE_BASE = " \
@@ -14,6 +14,7 @@ IMAGE_BASE = " \
     can-utils \
     libsocketcan \
     bcm2835-dev \
+    python3-supervisor \
 "
 
 VSOMEIP_PKGS = " \
@@ -55,6 +56,7 @@ QT_PKGS = " \
     qtquickcontrols-mkspecs \
     qtquickcontrols2 \
     qtmultimedia \
+    qtwayland \
 "
 
 GSTREAMER_PKGS = " \

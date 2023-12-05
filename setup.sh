@@ -25,6 +25,10 @@ bitbake-layers add-layer ../meta-infotainment
 # Update local.conf with given settings
 echo "Updating local.conf..."
 cat <<EOF >> $LOCAL_CONF
+# Setting for camera in wayland compositor
+PACKAGECONFIG:remove:pn-qtwayland = "xcomposite-glx"
+VIDEO_CAMERA = "1"
+
 # Setting for CAN 2-CH FD
 KERNEL_DEVICETREE:append = " \
                         overlays/mcp251xfd.dtbo \
@@ -52,9 +56,10 @@ VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
 DISTRO_FEATURES_BACKFIL_CONSIDERED = "sysvinit"
 VIRTUAL-RUNTIME_initscript = "systemd-compat-units"
 
-# Set X11 for Qt
-DISTRO_FEATURES:remove = "wayland vulkan"
-DISTRO_FEATURES:append = " X11"
+# Set wayland for Qt
+DISTRO_FEATURES:remove = "x11 vulkan"
+DISTRO_FEATURES:append = " wayland"
+CORE_IMAGE_EXTRA_INSTALL = "wayland"
 
 # Ignore old license error
 LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"

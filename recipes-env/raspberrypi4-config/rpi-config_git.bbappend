@@ -16,4 +16,6 @@ do_deploy:append() {
     echo "hdmi_group=2" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
     echo "hdmi_mode=87" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
     echo "hdmi_cvt 1024 1280 60 6 0 0 0" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
+    echo "start_x=1" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
+    echo "gpu_mem=256" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
 }

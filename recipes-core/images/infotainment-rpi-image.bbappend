@@ -1,5 +1,4 @@
-HU_CODE = " \
-    headunit \
+PDC_CODE = " \
     pdc \
     supervisor \
 "
@@ -60,11 +59,12 @@ QT_PKGS = " \
 "
 
 GSTREAMER_PKGS = " \
+    gst-devtools \
+    gstreamer1.0 \
     gstreamer1.0-plugins-base \
-    gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-good \
     gstreamer1.0-libav \
-    pulseaudio \
 "
 
 PIRACER_PKGS = " \
@@ -87,12 +87,12 @@ PIRACER_PKGS = " \
     python3-pyftdi \
     python3-piracer-py \
     opencv \    
-    "
+"
 
 IMAGE_INSTALL += " \
     ${IMAGE_BASE} \
     ${PIRACER_PKGS} \
-    ${HU_CODE} \
+    ${PDC_CODE} \
     ${QT_PKGS} \
     ${QT_BASE} \
     ${VSOMEIP_PKGS} \

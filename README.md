@@ -11,9 +11,9 @@ This layher depends on:
 - URI: [https://github.com/yoctoproject/poky](https://github.com/yoctoproject/poky)
     - branch : kirkstone
     - revision : 4.0.12
-- URI: [https://github.com/openembedded/openembedded-core](https://github.com/openembedded/openembedded-core.git)
+- URI: [git://git.openembedded.org/meta-openembedded](https://git.openembedded.org/meta-openembedded//)
     - branch : kirkstone
-    - commit : 482d864b8f1af84915ed6a9641e80af4e49a1f63
+    - commit : 8a75c61cce2aa1d6e5a3597ab8fc5a7ee6aeae1e4
 - URI: [https://github.com/agherzan/meta-raspberrypi](https://github.com/agherzan/meta-raspberrypi.git)
     - branch : master
     - commit : 59a6a1b5dd1e21189adec49c61eae04ed3e70338
@@ -27,11 +27,15 @@ Install basic environment for yocto.
 
 ```
 sudo apt-get update
-sudo apt-get upgrade
+```
 
-sudo apt install bmap-tools zstd liblz4-tool gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm python
+```
+sudo apt-get upgrade -y
+```
 
-sudo apt install curl
+```
+sudo apt install -y bmap-tools zstd liblz4-tool gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm python
+sudo apt install -y curl
 ```
 
 Install the [repo](https://source.android.com/docs/setup/download/downloading?hl=ko#installing-repo) command by Google first.
@@ -41,6 +45,7 @@ mkdir -p ~/bin
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 export PATH=~/bin:$PATH
+
 ```
 
 ## Create workspace
@@ -50,13 +55,15 @@ mkdir yocto-infotainment && cd yocto-infotainment
 repo init -u https://github.com/SEA-ME-COSS/meta-infotainment -b kirkstone -m tools/ivi-yocto.xml
 repo sync
 repo start work --all
+
 ```
 
 ## Setup Build Environment
 
 ```
 cd poky
-./meta-infotainment/setup.sh
+. ./meta-infotainment/setup.sh
+
 ```
 
 # Build Images
@@ -65,6 +72,7 @@ This headunit works fully on Raspberry Pi 4 with full hardware setup.
 
 ```
 bitbake infotainment-rpi-image
+
 ```
 
 # Download Image
@@ -73,6 +81,7 @@ bitbake infotainment-rpi-image
     
     ```
     sudo fdisk -l
+
     ```
     
 2. Write image to SD card
@@ -83,6 +92,7 @@ bitbake infotainment-rpi-image
     cd tmp/deploy/images/raspberrypi4-64
     sudo dd if=infotainment-rpi-image-raspberrypi4-64-[timewhenyoubuild].rootfs.rpi-sdimg of=/dev/sda
     sync
+
     ```
     
 
@@ -102,10 +112,11 @@ bitbake infotainment-rpi-image
     - Module for IPC(vsomeip)
     - We have to downgrade boost version for particular version of commonapi
 4. recipes-pypi
-    - Install piracer and ****dependent pip packages
+    - Install piracer and dependent pip packages
     - Use setuptools3
 5. recipes-module
     - Apps that we made. Including headunit & ivi
+    - Supervisor is for auto start and managing the process
 6. recipes-core
     - Main bb files for making our image
 

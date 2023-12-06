@@ -1,39 +1,31 @@
 # meta-infotainment
 
+This is the layer for **In-Vehicle Infotainment** fit in OpenEmbedded/Yocto
 
-This is the layer for head-unit fit in OpenEmbedded/Yocto.
-
-Details of Head-Unit, go to [DES-Head-Unit](https://github.com/SEA-ME-COSS/DES-Head-Unit)
-<br/>  
+Details of **In-Vehicle Infotainment**, go to In [In-Vehicle-Infotainment](https://github.com/SEA-ME-COSS/In-Vehicle-Infotainment)
 
 # Dependencies
 
-
 This layher depends on:
 
-- URI: [https://github.com/yoctoproject/poky](https://github.com/yoctoproject/poky)
+- URI: [https://github.com/yoctoproject/poky](https://github.com/yoctoproject/poky)
     - branch : kirkstone
     - revision : 4.0.12
-
-- URI: [https://github.com/openembedded/openembedded-core](https://github.com/openembedded/openembedded-core.git)
+- URI: [https://github.com/openembedded/openembedded-core](https://github.com/openembedded/openembedded-core.git)
     - branch : kirkstone
     - commit : 482d864b8f1af84915ed6a9641e80af4e49a1f63
-
-- URI: [https://github.com/agherzan/meta-raspberrypi](https://github.com/agherzan/meta-raspberrypi.git)
+- URI: [https://github.com/agherzan/meta-raspberrypi](https://github.com/agherzan/meta-raspberrypi.git)
     - branch : master
     - commit : 59a6a1b5dd1e21189adec49c61eae04ed3e70338
-
-- URI: [https://github.com/meta-qt5/meta-qt5](https://github.com/meta-qt5/meta-qt5.git)
+- URI: [https://github.com/meta-qt5/meta-qt5](https://github.com/meta-qt5/meta-qt5.git)
     - branch : kirkstone
     - commit : ae8a97f79364bed1abc297636f7933d0e35f22be
-  
 
 # Quick Start
 
-
 Install basic environment for yocto.
 
-```bash
+```
 sudo apt-get update
 sudo apt-get upgrade
 
@@ -42,9 +34,9 @@ sudo apt install bmap-tools zstd liblz4-tool gawk wget git-core diffstat unzip t
 sudo apt install curl
 ```
 
- Install the [repo](https://source.android.com/docs/setup/download/downloading?hl=ko#installing-repo) command by Google first.
+Install the [repo](https://source.android.com/docs/setup/download/downloading?hl=ko#installing-repo) command by Google first.
 
-```bash
+```
 mkdir -p ~/bin
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
@@ -53,62 +45,33 @@ export PATH=~/bin:$PATH
 
 ## Create workspace
 
-```bash
+```
 mkdir yocto-infotainment && cd yocto-infotainment
-repo init -u https://github.com/SEA-ME-COSS/meta-infotainment -b kirkstone -m tools/headunit-yocto.xml
+repo init -u https://github.com/SEA-ME-COSS/meta-infotainment -b kirkstone -m tools/ivi-yocto.xml
 repo sync
 repo start work --all
 ```
 
-## Update existing workspace
-
-In order to bring all the layers up to date with upstream
-
-```bash
-cd yocto-infotainment
-repo sync
-repo rebase
-```
-
 ## Setup Build Environment
 
-```bash
+```
 cd poky
-. ./meta-infotainment/setup.sh
+./meta-infotainment/setup.sh
 ```
-
-## Disable auto-start
-
-If you want to disable auto-start
-
-```bash
-bitbake infotainment-rpi-image -c clean
-bitbake infotainment-rpi-image -e SKIP_AUTO_START=1
-```
-  
 
 # Build Images
 
-
 This headunit works fully on Raspberry Pi 4 with full hardware setup.
 
-```bash
+```
 bitbake infotainment-rpi-image
 ```
 
-If you want to test in 64-bit machine in QEMU using the following command:
-
-```bash
-MACHINE=qemux86-64 runqemu nographic
-```
-  
-
 # Download Image
-
 
 1. Find where SD card is
     
-    ```bash
+    ```
     sudo fdisk -l
     ```
     
@@ -116,22 +79,39 @@ MACHINE=qemux86-64 runqemu nographic
     
     You should write rpi-sdimg.
     
-    ```bash
+    ```
     cd tmp/deploy/images/raspberrypi4-64
     sudo dd if=infotainment-rpi-image-raspberrypi4-64-[timewhenyoubuild].rootfs.rpi-sdimg of=/dev/sda
     sync
     ```
-  
+    
+
+# Architecture
+
+![metainfotianmentstructure.png](./images/metainfotianmentstructure.png)
 
 # Details
 
-
-If you want to know details about yocto, go to docs
-  
+1. recipes-connectivity & recipes kernel
+    - Files for match poky(kirkstone) and meta-rapsberrypi(master)
+    - Refer meta-raspberrypi [issue #1211](https://github.com/agherzan/meta-raspberrypi/issues/1211)
+2. recipes-env
+    - Basic setting for run our ivi app
+    - Install qt5, wifi, raspi-config etc
+3. recipes-ipc
+    - Module for IPC(vsomeip)
+    - We have to downgrade boost version for particular version of commonapi
+4. recipes-pypi
+    - Install piracer and ****dependent pip packages
+    - Use setuptools3
+5. recipes-module
+    - Apps that we made. Including headunit & ivi
+6. recipes-core
+    - Main bb files for making our image
 
 # References
-
 
 - [Yocto Project](https://docs.yoctoproject.org/4.0.12/migration-guides/migration-4.0.html)
 - [Meta-raspberrypi](https://meta-raspberrypi.readthedocs.io/en/latest/index.html)
 - [Meta-Qt](https://koansoftware.com/pub/talks/QtDay-2019/QtDay2019-Koan.pdf)
+- [Meta-Openembedded](https://layers.openembedded.org/layerindex/branch/master/layers/)

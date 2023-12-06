@@ -95,7 +95,7 @@ PIRACER_PKGS = " \
 IMAGE_INSTALL += " \
     ${IMAGE_BASE} \
     ${PIRACER_PKGS} \
-    ${PDC_CODE} \
+    ${IVI_CODE} \
     ${QT_PKGS} \
     ${QT_BASE} \
     ${VSOMEIP_PKGS} \

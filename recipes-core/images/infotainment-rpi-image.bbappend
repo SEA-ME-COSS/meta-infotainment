@@ -1,7 +1,7 @@
-PDC_CODE = " \
-    pdc \
+IVI_CODE = " \
+    ivi \
     headunit \
-    pdc-supervisor \
+    ivi-supervisor \
 "
 
 IMAGE_BASE = " \

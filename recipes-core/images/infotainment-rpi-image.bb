@@ -1,4 +1,4 @@
-SUMMARY = "Basic image for HeadUnit"
+SUMMARY = "Basic image for In-Vehicle Infotainment"
 
 inherit infotainment-rpi-image
 

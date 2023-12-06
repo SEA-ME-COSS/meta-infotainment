@@ -1,6 +1,7 @@
 PDC_CODE = " \
     pdc \
-    supervisor \
+    headunit \
+    pdc-supervisor \
 "
 
 IMAGE_BASE = " \
@@ -59,12 +60,14 @@ QT_PKGS = " \
 "
 
 GSTREAMER_PKGS = " \
+    mesa \
     gst-devtools \
     gstreamer1.0 \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-good \
     gstreamer1.0-libav \
+    gstreamer1.0-meta-base \
 "
 
 PIRACER_PKGS = " \

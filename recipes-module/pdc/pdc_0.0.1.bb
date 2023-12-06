@@ -4,7 +4,7 @@ LICENSE = "CC-BY-SA-4.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=fba3b94d88bfb9b81369b869a1e9a20f"
 
 SRC_URI = "git://github.com/SEA-ME-COSS/DES-PDC-System.git;protocol=https;branch=kirkstone"
-SRCREV = "8881c32047f3c838173b5d88f46ec59cfc658f6e"
+SRCREV = "15ecfd844d9845c3dfb2fd64a38f5bfa682ce02a"
 
 S = "${WORKDIR}/git"
 

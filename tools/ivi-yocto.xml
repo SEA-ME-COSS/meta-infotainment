@@ -9,8 +9,8 @@
 
   <project name="poky" path="poky" revision="d6b8790370500b99ca11f0d8a05c39b661ab2ba6"/>
   <project name="meta-raspberrypi" path="poky/meta-raspberrypi" revision="482d864b8f1af84915ed6a9641e80af4e49a1f63" />
-  <project name="meta-openembedded" path="poky/meta-openembedded" remote="openembedded" revision="482d864b8f1af84915ed6a9641e80af4e49a1f63" />
-  <project name="meta-qt5" path="poky/meta-qt5" remote="github" revision="ae8a97f79364bed1abc297636f7933d0e35f22be"/>
+  <project name="meta-openembedded" path="poky/meta-openembedded" remote="openembedded" revision = "kirkstone" revision="482d864b8f1af84915ed6a9641e80af4e49a1f63" />
+  <project name="meta-qt5" path="poky/meta-qt5" remote="github" revision = "kirkstone" revision="ae8a97f79364bed1abc297636f7933d0e35f22be" />
   <project name="SEA-ME-COSS/meta-infotainment" path="poky/meta-infotainment" remote="github" />
 
 </manifest>

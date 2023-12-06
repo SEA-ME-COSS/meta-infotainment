@@ -1,1 +1,0 @@
-PACKAGECONFIG += "libv4l2"

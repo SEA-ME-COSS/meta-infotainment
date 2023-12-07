@@ -36,6 +36,7 @@ sudo apt-get upgrade -y
 ```
 sudo apt install -y bmap-tools zstd liblz4-tool gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm python
 sudo apt install -y curl
+
 ```
 
 Install the [repo](https://source.android.com/docs/setup/download/downloading?hl=ko#installing-repo) command by Google first.

@@ -6,7 +6,7 @@ Details of **In-Vehicle Infotainment**, go to In [In-Vehicle-Infotainment](https
 
 # Dependencies
 
-This layher depends on:
+This layer depends on:
 
 - URI: [https://github.com/yoctoproject/poky](https://github.com/yoctoproject/poky)
     - branch : kirkstone

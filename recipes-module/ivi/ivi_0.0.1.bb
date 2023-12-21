@@ -3,7 +3,7 @@ SUMMARY = "In-Vehicle Infotainment made by Qt5"
 LICENSE = "CC-BY-SA-4.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=fba3b94d88bfb9b81369b869a1e9a20f"
 
-SRC_URI = "git://github.com/SEA-ME-COSS/DES-PDC-System.git;protocol=https;branch=kirkstone"
+SRC_URI = "git://github.com/SEA-ME-COSS/In-Vehicle-Infotainment.git;protocol=https;branch=kirkstone"
 SRCREV = "5c75f21518aec27a8537c719496d7ee4d71eaa27"
 
 S = "${WORKDIR}/git"
